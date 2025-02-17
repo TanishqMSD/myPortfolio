@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+body{
+  background-color: #131314;
+}
+
+/* index.css */
+body, html {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  width: 100vw; /* Ensures full viewport width */
+}
+
+* {
+  box-sizing: border-box; /* Prevents elements from overflowing */
+}
+
+
+.cyber-link {
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+.cyber-link:hover {
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+}
