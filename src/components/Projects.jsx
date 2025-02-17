@@ -125,7 +125,8 @@ const Projects = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mt-12 max-w-6xl w-full">
         <ProjectCard 
           title="Invoisify" 
-          description="An Invoice Generator App with robust features." 
+          description="An Invoice Generator App with robust features."
+          liveLink="https://invoisify-tech.vercel.app"  
           githubLink="https://github.com/TanishqMSD/invoisify" 
           imgSrc={Invoisify}
           tags={["OAuth Google Login", "HTML2PDF", "Template Storage", "In Progress"]}
