@@ -1,9 +1,59 @@
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet";
 import { FaGithub, FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
 import CodeSnippetCTA from "./CodeSnippetCTA";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+  const [status, setStatus] = useState({
+    type: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus({ type: "", message: "" });
+
+    try {
+      const response = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({
+          type: "success",
+          message: "Message sent successfully!"
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        throw new Error(data.error || "Failed to send message");
+      }
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message: "Failed to send message. Please try again later."
+      });
+    }
+  };
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center py-8 mt-8">
       <Helmet>
@@ -54,38 +104,55 @@ const Contact = () => {
 
         {/* Contact Form */}
         <motion.form
-          className="w-full md:w-1/2 flex flex-col gap-4 p-6 bg-[#1c1c1c] rounded-xl shadow-lg border border-cyan-500/20"
+          className="w-full h-max md:w-1/2 flex flex-col p-6 bg-[#1c1c1c] rounded-xl shadow-lg border border-cyan-500/20"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 text-left w-full">Name</label>
             <input
               type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               className="bg-[#131314] text-white p-3 rounded-lg border border-cyan-500/30 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none shadow-lg hover:border-cyan-500/50"
               placeholder="Your Name"
+              required
             />
           </div>
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 text-left w-full">Email</label>
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="bg-[#131314] text-white p-3 rounded-lg border border-cyan-500/30 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none shadow-lg hover:border-cyan-500/50"
               placeholder="your.email@example.com"
+              required
             />
           </div>
           <div className="flex flex-col gap-2">
             <label className="text-gray-300 text-left w-full">Message</label>
             <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               className="bg-[#131314] text-white p-3 rounded-lg border border-cyan-500/30 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none shadow-lg hover:border-cyan-500/50 min-h-[120px] resize-none"
               placeholder="Your message here..."
+              required
             />
           </div>
+          {status.message && (
+            <div className={`mt-4 p-3 rounded-lg ${status.type === "success" ? "bg-green-500/20 text-green-400" : "bg-red-500/20 text-red-400"}`}>
+              {status.message}
+            </div>
+          )}
           <motion.button
             type="submit"
-            className="mt-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all shadow-lg"
+            className="mt-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all shadow-lg"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

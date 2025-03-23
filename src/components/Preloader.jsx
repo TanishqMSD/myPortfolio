@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const Preloader = ({ onFinish }) => {
-  const [text, setText] = useState("Hello, World!");
+  const [text, setText] = useState("< Hello, World! />");
 
   useEffect(() => {
     setTimeout(() => setText("Welcome to Tanishq's Portfolio"), 2000);

@@ -31,7 +31,7 @@ const HeroSection = () => {
   return (
     <section className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between text-white">
       {/* Left Side: Text Content */}
-      <div className="flex flex-col justify-center items-center md:items-start w-full md:w-1/2 p-4 md:p-8 space-y-4 md:space-y-6 py-4 mt-8 text-center md:text-left">
+      <div className="flex flex-col lg:ml-12 justify-center items-center md:items-start w-full md:w-1/2 p-4 md:p-8 space-y-4 md:space-y-6 py-4 mt-8 text-center md:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
