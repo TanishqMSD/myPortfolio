@@ -29,29 +29,27 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-between text-white">
+    <section className="relative w-full min-h-screen flex flex-col md:flex-row items-center justify-between text-white">
       {/* Left Side: Text Content */}
-      <div className="flex flex-col justify-center items-start ml-4 w-1/2 p-8 space-y-6 py-4 mt-8">
+      <div className="flex flex-col justify-center items-center md:items-start w-full md:w-1/2 p-4 md:p-8 space-y-4 md:space-y-6 py-4 mt-8 text-center md:text-left">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
-          className="text-4xl md:text-6xl font-bold tracking-wide"
+          className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-wide"
         >
-          Hey! I'm <br/><span className="text-[#00c2ff] py-6"> Tanishq Kulkarni </span>
+          Hey! I'm <br/><span className="text-[#00c2ff] py-4 md:py-6"> Tanishq Kulkarni </span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.4 }}
-          className="text-lg md:text-xl text-gray-300 max-w-3xl"
+          className="text-base md:text-lg lg:text-xl text-gray-300 max-w-3xl"
         >
-          I am a passionate Web Developer, creating modern, interactive web applications. Explore my projects and experience cutting-edge web technology! 
-
-          
+          I am a passionate Web Developer, creating modern, interactive web applications. Explore my projects and experience cutting-edge web technology!
         </motion.p>
-        <div className="flex space-x-4 items-center">
-          <FaLocationDot className="text-3xl space-y-4 text-white" />
+        <div className="flex space-x-4 items-center justify-center md:justify-start w-full">
+          <FaLocationDot className="text-2xl md:text-3xl text-white" />
           <span>Mumbai, India</span>
         </div>
         {/* Download Resume Button */}
@@ -60,16 +58,16 @@ const HeroSection = () => {
           whileTap={{ scale: 0.95 }}
           href={resume}
           download="TanishqKulkarni_Resume.pdf"
-          className="mt-6 px-8 py-3 text-lg font-semibold rounded-full bg-transparent border-2 border-[#00c2ff] text-[#00c2ff] hover:bg-[#00c2ff] hover:text-[#131314] transition-all"
+          className="mt-4 md:mt-6 px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-semibold rounded-full bg-transparent border-2 border-[#00c2ff] text-[#00c2ff] hover:bg-[#00c2ff] hover:text-[#131314] transition-all"
         >
           Download Resume
         </motion.a>
       </div>
 
       {/* Right Side: Interactive Image */}
-      <div className="relative w-1/2 min-h-screen flex items-center justify-center">
+      <div className="relative w-full md:w-1/2 min-h-[50vh] md:min-h-screen flex items-center justify-center mt-8 md:mt-0">
         <motion.div 
-          className="relative mt-20"
+          className="relative"
           animate={{
             x: mousePosition.x * 20,
             y: mousePosition.y * 20,
@@ -79,8 +77,8 @@ const HeroSection = () => {
           transition={{ type: "spring", stiffness: 75, damping: 15 }}
         >
           {/* Main container with proper aspect ratio */}
-          <div className="relative w-[400px] h-[400px] overflow-hidden">
-            {/* Blue background gradient - adjusted to match screenshot */}
+          <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] overflow-hidden">
+            {/* Blue background gradient */}
             <motion.div 
               className="absolute -inset-1 bg-gradient-to-b from-blue-600 to-blue-400 rounded-lg blur-lg opacity-75"
               animate={{ 
@@ -93,15 +91,13 @@ const HeroSection = () => {
               }}
             />
             
-            {/* Image container with proper proportions */}
+            {/* Image container */}
             <motion.div 
               className="relative rounded-lg p-2 z-10"
               whileHover={{ scale: 1.03 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <div 
-                className="w-full h-full overflow-hidden rounded-lg"
-              >
+              <div className="w-full h-full overflow-hidden rounded-lg">
                 <img 
                   src={tanishqImage} 
                   alt="Tanishq Kulkarni" 
@@ -111,11 +107,9 @@ const HeroSection = () => {
             </motion.div>
           </div>
           
-          
-          
           {/* Interactive floating elements */}
           <motion.div 
-            className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500 rounded-full opacity-80"
+            className="absolute -top-4 -right-4 w-12 h-12 md:w-16 md:h-16 bg-blue-500 rounded-full opacity-80"
             animate={{ 
               y: [0, -10, 0],
               scale: [1, 1.1, 1],
@@ -127,7 +121,7 @@ const HeroSection = () => {
             }}
           />
           <motion.div 
-            className="absolute -bottom-4 -left-4 w-12 h-12 bg-cyan-400 rounded-full opacity-80"
+            className="absolute -bottom-4 -left-4 w-8 h-8 md:w-12 md:h-12 bg-cyan-400 rounded-full opacity-80"
             animate={{ 
               y: [0, 10, 0],
               scale: [1, 1.1, 1],

@@ -80,15 +80,15 @@ const TechIcon = ({ icon, imgSrc, color }) => {
 const ProjectCard = ({ title, description, liveLink, githubLink, imgSrc, tags }) => {
   return (
     <div>
-    <motion.div whileHover={{ scale: 1.05 }} className="relative h-[600px] flex flex-col">
-      <div className="bg-[#1c1c1c]  shadow-lg rounded-xl overflow-hidden transition-transform duration-300 p-6">
+    <motion.div whileHover={{ scale: 1.05 }} className="relative h-auto flex flex-col">
+      <div className="bg-[#1c1c1c] shadow-lg rounded-xl overflow-hidden transition-transform duration-300 p-4 sm:p-6">
         {/* Project Image */}
-        <img src={imgSrc} alt={title} className="w-full h-48 object-fit rounded-lg" />
+        <img src={imgSrc} alt={title} className="w-full h-40 sm:h-48 object-cover rounded-lg" />
 
         {/* Content */}
-        <div className="mt-4">
-          <h3 className="text-[#00c2ff] text-2xl font-bold">{title}</h3>
-          <p className="text-gray-400 mt-2">{description}</p>
+        <div className="mt-3 sm:mt-4">
+          <h3 className="text-[#00c2ff] text-xl sm:text-2xl font-bold">{title}</h3>
+          <p className="text-gray-400 mt-2 text-sm sm:text-base">{description}</p>
 
           {/* Feature Tags */}
           <div className="flex flex-wrap gap-2 mt-4">
@@ -148,7 +148,7 @@ const Projects = () => {
       </Helmet>
       <TechStack />
       <span className="text-white text-3xl font-bold py-8">Projects</span>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mt-12 max-w-6xl w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 xl:gap-12 mt-8 sm:mt-12 max-w-6xl w-full px-4 sm:px-6">
         <ProjectCard 
           title="Invoisify" 
           description="An Invoice Generator App with robust features."

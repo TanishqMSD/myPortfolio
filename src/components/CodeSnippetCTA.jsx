@@ -12,22 +12,25 @@ const reach = async () => {
 reach();`;
 
   return (
-    <section className="w-full flex flex-col items-start justify-left min-h-screen">
-      
-
+    <section className="w-full h-full flex items-center justify-center">
       {/* 3D Code Snippet */}
-      <Canvas className="w-full h-[400px]">
-        <OrbitControls enableZoom={false} />
-        <ambientLight intensity={1.5} />
-        <directionalLight position={[3, 3, 3]} intensity={2} />
+      <Canvas className="w-full h-[500px]">
+        <OrbitControls enableZoom={false} enablePan={false} />
+        <ambientLight intensity={2} />
+        <directionalLight position={[3, 3, 3]} intensity={2.5} />
+        <spotLight position={[-5, 5, 0]} angle={0.15} penumbra={1} intensity={1} />
 
         {/* Floating 3D Text */}
         <Text
-          fontSize={0.2} // Adjusted font size
-          position={[0, 0, 0]} // Centered position
-          maxWidth={5} // Proper width
+          fontSize={0.25}
+          position={[0, 0, 0]}
+          maxWidth={6}
           textAlign="left"
-          color="cyan"
+          color="#00c2ff"
+          anchorX="center"
+          anchorY="middle"
+          outlineWidth={0.02}
+          outlineColor="#1c1c1c"
         >
           {code}
         </Text>

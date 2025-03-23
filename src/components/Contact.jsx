@@ -40,19 +40,63 @@ const Contact = () => {
         Let's Connect <span className="bg-transparent text-white">🚀</span>
       </motion.h2>
 
-      {/* CodeSnippetCTA Positioned Between Heading & Social Links */}
+      {/* Container for CodeSnippetCTA and Contact Form */}
       <motion.div
-        className="w-full max-w-4xl flex justify-center"
+        className="w-full max-w-7xl flex flex-col md:flex-row justify-center items-stretch gap-12 px-4 mb-12 mt-16"
         initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1.5, scale: 1 }}
+        animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.3 }}
       >
-        <CodeSnippetCTA />
+        {/* CodeSnippetCTA */}
+        <div className="w-full md:w-1/2 min-h-[600px] flex items-center justify-center p-6">
+          <CodeSnippetCTA />
+        </div>
+
+        {/* Contact Form */}
+        <motion.form
+          className="w-full md:w-1/2 flex flex-col gap-4 p-6 bg-[#1c1c1c] rounded-xl shadow-lg border border-cyan-500/20"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <div className="flex flex-col gap-2">
+            <label className="text-gray-300 text-left w-full">Name</label>
+            <input
+              type="text"
+              className="bg-[#131314] text-white p-3 rounded-lg border border-cyan-500/30 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none shadow-lg hover:border-cyan-500/50"
+              placeholder="Your Name"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-gray-300 text-left w-full">Email</label>
+            <input
+              type="email"
+              className="bg-[#131314] text-white p-3 rounded-lg border border-cyan-500/30 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none shadow-lg hover:border-cyan-500/50"
+              placeholder="your.email@example.com"
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label className="text-gray-300 text-left w-full">Message</label>
+            <textarea
+              className="bg-[#131314] text-white p-3 rounded-lg border border-cyan-500/30 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all outline-none shadow-lg hover:border-cyan-500/50 min-h-[120px] resize-none"
+              placeholder="Your message here..."
+            />
+          </div>
+          <motion.button
+            type="submit"
+            className="mt-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all shadow-lg"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Send Message
+          </motion.button>
+        </motion.form>
       </motion.div>
 
       {/* Social Links */}
       <motion.div
-        className="grid grid-cols-3 gap-6 md:grid-cols-5"
+        className="grid grid-cols-3 gap-6 md:grid-cols-5 mt-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
