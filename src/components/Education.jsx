@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 import Vit from "../assets/vit.jpg";
 import Skp from "../assets/skpatil.jpeg";
@@ -32,6 +33,24 @@ const educationData = [
 const Education = () => {
   return (
     <>
+      <Helmet>
+        <title>Education | Tanishq Kulkarni - Academic Background</title>
+        <meta name="description" content="Learn about Tanishq Kulkarni's educational journey, including Computer Engineering Diploma and Bachelor's in Computer Science. Mumbai-based web developer's academic achievements." />
+        <meta name="keywords" content="Tanishq Kulkarni education, Computer Science degree, Mumbai education, web development studies" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": educationData.map((edu, index) => ({
+              "@type": "EducationalOccupationalCredential",
+              "name": edu.title,
+              "description": edu.description,
+              "educationalLevel": edu.tags[0],
+              "dateCreated": edu.year
+            }))
+          })}
+        </script>
+      </Helmet>
     <div className="flex items-center justify-center"><span className="text-white text-3xl font-bold py-8">Education</span></div>
     <div className="relative flex flex-col items-center py-10">
       

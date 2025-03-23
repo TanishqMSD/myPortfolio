@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { SiHtml5, SiCss3, SiJavascript, SiExpress, SiMongodb, SiTailwindcss, SiPhp, SiMysql, SiOpenai, SiGooglegemini } from "react-icons/si";
 import LangflowLogo from "../assets/langflow.png";
@@ -120,6 +121,31 @@ const ProjectCard = ({ title, description, liveLink, githubLink, imgSrc, tags })
 const Projects = () => {
   return (
     <div className="flex flex-col items-center py-16 px-6">
+      <Helmet>
+        <title>Projects | Tanishq Kulkarni - Web Developer Portfolio</title>
+        <meta name="description" content="Explore Tanishq Kulkarni's web development projects including Invoisify, InfluenceIQ, and more. Full-stack development with React, Node.js, and modern technologies." />
+        <meta name="keywords" content="Tanishq Kulkarni projects, web development portfolio, React projects, Node.js applications, Mumbai developer" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "SoftwareApplication",
+                "name": "Invoisify",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "InfluenceIQ",
+                "applicationCategory": "AnalysisApplication",
+                "operatingSystem": "Web"
+              }
+            ]
+          })}
+        </script>
+      </Helmet>
       <TechStack />
       <span className="text-white text-3xl font-bold py-8">Projects</span>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12 mt-12 max-w-6xl w-full">

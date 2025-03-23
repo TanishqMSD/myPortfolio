@@ -1,10 +1,35 @@
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet";
 import { FaGithub, FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import CodeSnippetCTA from "./CodeSnippetCTA";
 
 const Contact = () => {
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center py-8 mt-8">
+      <Helmet>
+        <title>Contact | Tanishq Kulkarni - Get in Touch</title>
+        <meta name="description" content="Connect with Tanishq Kulkarni, a Web Developer from Mumbai. Reach out for collaborations, opportunities, or just to say hello." />
+        <meta name="keywords" content="contact Tanishq Kulkarni, hire web developer Mumbai, web development collaboration" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Tanishq Kulkarni",
+            "url": "https://tanishqkulkarni.com/contact",
+            "sameAs": [
+              "https://github.com/TanishqMSD",
+              "https://www.linkedin.com/in/tanishq-kulkarni-0148682b6/",
+              "https://twitter.com/tanishq7781",
+              "https://instagram.com/tanishq7.exe"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "tanishqkulkarni18@gmail.com",
+              "contactType": "professional"
+            }
+          })}
+        </script>
+      </Helmet>
       {/* Animated Title */}
       <motion.h2
         className="text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-cyan-400 to-blue-600 text-transparent bg-clip-text"
