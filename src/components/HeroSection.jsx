@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
 import {FaLocationDot} from "react-icons/fa6";
 import resume from "/resume.pdf";
+import tanishqImage from "../assets/tanisParel.jpg";
 
 const HeroSection = () => {
   // Parallax Background Effect
@@ -12,6 +11,21 @@ const HeroSection = () => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Mouse position for interactive image effect
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX / window.innerWidth - 0.5,
+        y: e.clientY / window.innerHeight - 0.5,
+      });
+    };
+    
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
@@ -52,37 +66,83 @@ const HeroSection = () => {
         </motion.a>
       </div>
 
-      {/* Right Side: 3D Developer Model (No Clipping, Full Height) */}
-      <div className="relative w-1/2 min-h-screen flex items-center justify-center overflow-visible">
-        {/* 3D Model Canvas (Fixes Clipping) */}
-        <Canvas
-          className="absolute inset-0 w-full"
-          style={{
-            height: "100vh", // Forces full viewport height
-            width: "100%",
-            aspectRatio: "16/9", // Keeps correct proportions
-            overflow: "visible",
+      {/* Right Side: Interactive Image */}
+      <div className="relative w-1/2 min-h-screen flex items-center justify-center">
+        <motion.div 
+          className="relative mt-20"
+          animate={{
+            x: mousePosition.x * 20,
+            y: mousePosition.y * 20,
+            rotateY: mousePosition.x * 10,
+            rotateX: -mousePosition.y * 10,
           }}
+          transition={{ type: "spring", stiffness: 75, damping: 15 }}
         >
-          <ambientLight intensity={2} />
-          <directionalLight position={[3, 4, 3]} intensity={2} />
-          <OrbitControls enableZoom={false} scale={0}/>
-          <DeveloperModel  />
-        </Canvas>
+          {/* Main container with proper aspect ratio */}
+          <div className="relative w-[400px] h-[400px] overflow-hidden">
+            {/* Blue background gradient - adjusted to match screenshot */}
+            <motion.div 
+              className="absolute -inset-1 bg-gradient-to-b from-blue-600 to-blue-400 rounded-lg blur-lg opacity-75"
+              animate={{ 
+                rotate: [0, 360],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ 
+                rotate: { repeat: Infinity, duration: 10, ease: "linear" },
+                scale: { repeat: Infinity, duration: 3, ease: "easeInOut" }
+              }}
+            />
+            
+            {/* Image container with proper proportions */}
+            <motion.div 
+              className="relative rounded-lg p-2 z-10"
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              <div 
+                className="w-full h-full overflow-hidden rounded-lg"
+              >
+                <img 
+                  src={tanishqImage} 
+                  alt="Tanishq Kulkarni" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
+          
+          
+          
+          {/* Interactive floating elements */}
+          <motion.div 
+            className="absolute -top-4 -right-4 w-16 h-16 bg-blue-500 rounded-full opacity-80"
+            animate={{ 
+              y: [0, -10, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 3,
+              ease: "easeInOut",
+            }}
+          />
+          <motion.div 
+            className="absolute -bottom-4 -left-4 w-12 h-12 bg-cyan-400 rounded-full opacity-80"
+            animate={{ 
+              y: [0, 10, 0],
+              scale: [1, 1.1, 1],
+            }}
+            transition={{ 
+              repeat: Infinity, 
+              duration: 2.5,
+              ease: "easeInOut",
+              delay: 0.5,
+            }}
+          />
+        </motion.div>
       </div>
     </section>
   );
 };
-
-const DeveloperModel = () => {
-  const { scene } = useGLTF("/lost_programmer.glb");
-
-  useFrame(({ clock }) => {
-    scene.rotation.y += 0.005; // Constant rotation speed
-  });
-
-  return <primitive object={scene} scale={1.5} rotation={[Math.PI, 0, 0]} />;
-};
-
 
 export default HeroSection;
