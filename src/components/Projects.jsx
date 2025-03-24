@@ -122,9 +122,9 @@ const Projects = () => {
   return (
     <div className="flex flex-col items-center py-16 px-6">
       <Helmet>
-        <title>Projects | Tanishq Kulkarni - Web Developer Portfolio</title>
-        <meta name="description" content="Explore Tanishq Kulkarni's web development projects including Invoisify, InfluenceIQ, and more. Full-stack development with React, Node.js, and modern technologies." />
-        <meta name="keywords" content="Tanishq Kulkarni projects, web development portfolio, React projects, Node.js applications, Mumbai developer" />
+        <title>Projects | Tanishq Kulkarni - MERN Stack Developer in Mumbai</title>
+        <meta name="description" content="Explore Tanishq Kulkarni's web development projects including Invoisify, InfluenceIQ, and more. Full-stack MERN development by Mumbai-based developer Tanishq Codes." />
+        <meta name="keywords" content="Tanishq Kulkarni projects, Tanishq Codes, MERN stack developer Mumbai, Tanishq web developer, React projects, Node.js applications, Tanishq VIT, Mumbai developer portfolio" />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -134,13 +134,37 @@ const Projects = () => {
                 "@type": "SoftwareApplication",
                 "name": "Invoisify",
                 "applicationCategory": "BusinessApplication",
-                "operatingSystem": "Web"
+                "operatingSystem": "Web",
+                "author": {
+                  "@type": "Person",
+                  "name": "Tanishq Kulkarni",
+                  "jobTitle": "MERN Stack Developer",
+                  "url": "https://tanishqkulkarni.com"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD"
+                },
+                "description": "An Invoice Generator App with robust features by Tanishq Codes"
               },
               {
                 "@type": "SoftwareApplication",
                 "name": "InfluenceIQ",
                 "applicationCategory": "AnalysisApplication",
-                "operatingSystem": "Web"
+                "operatingSystem": "Web",
+                "author": {
+                  "@type": "Person",
+                  "name": "Tanishq Kulkarni",
+                  "jobTitle": "MERN Stack Developer",
+                  "url": "https://tanishqkulkarni.com"
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD"
+                },
+                "description": "AI-based social media analyzer by Mumbai-based developer Tanishq Kulkarni"
               }
             ]
           })}

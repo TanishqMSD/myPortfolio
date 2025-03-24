@@ -100,8 +100,9 @@ const HeroSection = () => {
               <div className="w-full h-full overflow-hidden rounded-lg">
                 <img 
                   src={tanishqImage} 
-                  alt="Tanishq Kulkarni" 
+                  alt="Tanishq Kulkarni - Web Developer from Mumbai, MERN Stack Developer" 
                   className="w-full h-full object-cover"
+                  itemProp="image"
                 />
               </div>
             </motion.div>
