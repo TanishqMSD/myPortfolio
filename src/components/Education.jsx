@@ -8,11 +8,11 @@ import Gpt from "../assets/gpt.jpg";
 
 const educationData = [
   {
-    title: "Bachelor's in Computer Engineering",
-    description: "Pursuing a degree in Computer Engineering.",
-    year: "2024 - Present",
-    imgSrc: Vit, 
-    tags: ["Computer Engineering", "Degree"]
+    title: "Secondary School Certification",
+    description: "Completed my high school education.",
+    year: "2020",
+    imgSrc: Skp,
+    tags: ["SSC", "Academic Excellence"]
   },
   {
     title: "Diploma in Computer Engineering",
@@ -22,11 +22,11 @@ const educationData = [
     tags: ["Computer Science", "Diploma"]
   },
   {
-    title: "Secondary School Certification",
-    description: "Completed my high school education.",
-    year: "2020",
-    imgSrc: Skp,
-    tags: ["SSC", "Academic Excellence"]
+    title: "Bachelor's in Computer Science",
+    description: "Pursuing a degree in Computer Science.",
+    year: "2024 - Present",
+    imgSrc: Vit, // Updated to Vit since it was previously an incorrect string path
+    tags: ["Computer Science", "Degree"]
   }
 ];
 

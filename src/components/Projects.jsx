@@ -43,10 +43,10 @@ const TechStack = () => {
       <motion.div
         className="flex items-center space-x-8 md:space-x-16"
         animate={{ x: ["50%", "-80%"] }}
-        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       >
         {/* Duplicate the icons to create a seamless scrolling effect */}
-        {[...Array(10)].map((_, i) => (
+        {[...Array(2)].map((_, i) => (
           <React.Fragment key={i}>
             <TechIcon icon={<SiHtml5 />} color="text-orange-500" />
             <TechIcon icon={<SiCss3 />} color="text-blue-500" />

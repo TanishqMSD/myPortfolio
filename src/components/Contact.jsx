@@ -98,7 +98,7 @@ const Contact = () => {
         transition={{ duration: 1, delay: 0.3 }}
       >
         {/* CodeSnippetCTA */}
-        <div className="w-full md:w-1/2 min-h-[600px] flex items-center justify-center p-0 mt-0">
+        <div className="w-full md:w-1/2 min-h-[600px] flex items-center justify-center p-6">
           <CodeSnippetCTA />
         </div>
 
@@ -111,7 +111,7 @@ const Contact = () => {
           onSubmit={handleSubmit}
         >
           <div className="flex flex-col gap-2">
-            <label className="text-gray-300 text-left w-full py-2">Name</label>
+            <label className="text-gray-300 text-left w-full">Name</label>
             <input
               type="text"
               name="name"
@@ -123,7 +123,7 @@ const Contact = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label className="text-gray-300 text-left w-full py-2">Email</label>
+            <label className="text-gray-300 text-left w-full">Email</label>
             <input
               type="email"
               name="email"
@@ -135,7 +135,7 @@ const Contact = () => {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label className="text-gray-300 text-left w-full py-2">Message</label>
+            <label className="text-gray-300 text-left w-full">Message</label>
             <textarea
               name="message"
               value={formData.message}
