@@ -8,25 +8,25 @@ import Gpt from "../assets/gpt.jpg";
 
 const educationData = [
   {
-    title: "Secondary School Certification",
-    description: "Completed my high school education.",
-    year: "2020",
-    imgSrc: Skp,
-    tags: ["SSC", "Academic Excellence"]
+    title: "Bachelor's in Computer Engineering",
+    description: "Pursuing a degree in Computer Engineering with 9.7 CGPA",
+    year: "2024 - Present",
+    imgSrc: Vit,
+    tags: ["Computer Engineering", "Degree", "9.7 CGPA"]
   },
   {
     title: "Diploma in Computer Engineering",
-    description: "Government Polytechnic, Thane",
+    description: "Government Polytechnic, Thane - 91.18%",
     year: "2021 - 2024",
     imgSrc: Gpt,
-    tags: ["Computer Science", "Diploma"]
+    tags: ["Computer Engineering", "Diploma", "91.18%"]
   },
   {
-    title: "Bachelor's in Computer Science",
-    description: "Pursuing a degree in Computer Science.",
-    year: "2024 - Present",
-    imgSrc: Vit, // Updated to Vit since it was previously an incorrect string path
-    tags: ["Computer Science", "Degree"]
+    title: "Secondary School Certification",
+    description: "Completed my high school education with 97.40%",
+    year: "2020",
+    imgSrc: Skp,
+    tags: ["SSC", "Academic Excellence", "97.40%"]
   }
 ];
 
@@ -68,16 +68,17 @@ const Education = () => {
             {index % 2 === 0 ? (
               <>
                 <div className="w-1/2 pr-8 text-right">
-                  <div className="bg-[#1c1c1c] shadow-lg rounded-xl overflow-hidden transition-transform duration-300 p-6 border border-blue-500">
-                    <div className="w-full h-48">
-                      <img src={edu.imgSrc} alt={edu.title} className="w-full h-full object-cover rounded-lg" />
+                  <div className="bg-[#1c1c1c] shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 rounded-xl overflow-hidden transition-all duration-300 p-6 border-2 border-transparent hover:border-blue-500/50 bg-gradient-to-br from-[#1c1c1c] to-[#2a2a2a]">
+                    <div className="w-full h-64 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02] relative group">
+                      <img src={edu.imgSrc} alt={edu.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <h3 className="text-[#00c2ff] text-lg font-bold mt-4">{edu.title}</h3>
-                    <p className="text-gray-400 mt-2">{edu.description}</p>
-                    <span className="text-gray-500">{edu.year}</span>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <h3 className="text-[#00c2ff] text-xl font-bold mt-6 mb-3">{edu.title}</h3>
+                    <p className="text-gray-300 mt-2 text-base leading-relaxed">{edu.description}</p>
+                    <span className="text-gray-400 block mt-3 text-sm">{edu.year}</span>
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {edu.tags.map((tag, i) => (
-                        <span key={i} className="bg-blue-400 text-black px-3 py-1 rounded-md text-sm font-semibold">{tag}</span>
+                        <span key={i} className="bg-gradient-to-r from-blue-400 to-blue-500 text-black px-4 py-1.5 rounded-full text-sm font-semibold transform hover:scale-105 transition-transform duration-200 shadow-md">{tag}</span>
                       ))}
                     </div>
                   </div>
@@ -92,16 +93,17 @@ const Education = () => {
                   <div className="w-4 h-4 bg-blue-500 rounded-full animate-ping"></div>
                 </div>
                 <div className="w-1/2 pl-8">
-                  <div className="bg-[#1c1c1c] shadow-lg rounded-xl overflow-hidden transition-transform duration-300 p-6 border border-blue-500">
-                    <div className="w-full h-32">
-                      <img src={edu.imgSrc} alt={edu.title} className="w-full h-full object-cover rounded-lg" />
+                  <div className="bg-[#1c1c1c] shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 rounded-xl overflow-hidden transition-all duration-300 p-6 border-2 border-transparent hover:border-blue-500/50 bg-gradient-to-br from-[#1c1c1c] to-[#2a2a2a]">
+                    <div className="w-full h-64 overflow-hidden rounded-lg transform transition-transform duration-300 hover:scale-[1.02] relative group">
+                      <img src={edu.imgSrc} alt={edu.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <h3 className="text-[#00c2ff] text-lg font-bold mt-4">{edu.title}</h3>
-                    <p className="text-gray-400 mt-2">{edu.description}</p>
-                    <span className="text-gray-500">{edu.year}</span>
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <h3 className="text-[#00c2ff] text-xl font-bold mt-6 mb-3">{edu.title}</h3>
+                    <p className="text-gray-300 mt-2 text-base leading-relaxed">{edu.description}</p>
+                    <span className="text-gray-400 block mt-3 text-sm">{edu.year}</span>
+                    <div className="flex flex-wrap gap-2 mt-4">
                       {edu.tags.map((tag, i) => (
-                        <span key={i} className="bg-blue-400 text-black px-3 py-1 rounded-md text-sm font-semibold">{tag}</span>
+                        <span key={i} className="bg-gradient-to-r from-blue-400 to-blue-500 text-black px-4 py-1.5 rounded-full text-sm font-semibold transform hover:scale-105 transition-transform duration-200 shadow-md">{tag}</span>
                       ))}
                     </div>
                   </div>
