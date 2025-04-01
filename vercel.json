@@ -17,6 +17,14 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/assets/(.*)",
+      "headers": { "content-type": "application/javascript" },
+      "dest": "/assets/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
       "dest": "/index.html"
     }
