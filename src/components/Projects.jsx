@@ -52,7 +52,7 @@ const TechStack = () => {
       <motion.div
         className="flex items-center space-x-8 md:space-x-16"
         animate={{ x: ["-80%", "50%"] }}
-        transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       >
         {/* Duplicate the icons to create a seamless scrolling effect */}
         {[...Array(2)].map((_, i) => (
