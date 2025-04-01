@@ -17,9 +17,12 @@
       "dest": "/api/$1"
     },
     {
-      "src": "/assets/(.*)",
-      "headers": { "content-type": "application/javascript" },
+      "src": "^/assets/(.*)",
       "dest": "/assets/$1"
+    },
+    {
+      "src": "^/(.+\\.(js|css|svg|jpg|jpeg|png|gif|ico|json|woff2|woff|ttf))",
+      "dest": "/$1"
     },
     {
       "handle": "filesystem"
