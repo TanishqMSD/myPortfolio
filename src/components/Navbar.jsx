@@ -69,7 +69,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-6 text-gray-300 font-semibold">
-          {["Home", "Projects", "Education", "Contact"].map((item, index) => (
+          {["Home", "Skills", "Projects", "Education", "Contact"].map((item, index) => (
             <motion.li
               key={index}
               whileHover={{ scale: 1.1, color: "#00c2ff", textShadow: "0px 0px 10px rgba(0,194,255,0.8)" }}
@@ -97,7 +97,7 @@ const Navbar = () => {
         className="fixed top-0 left-0 h-full bg-[#131314] text-white w-[75%] max-w-[300px] p-6 flex flex-col space-y-6 z-50 shadow-lg md:hidden"
       >
         <h2 className="text-2xl font-bold border-b pb-2">Menu</h2>
-        {["Home", "Projects", "Education", "Contact"].map((item, index) => (
+        {["Home", "Skills", "Projects", "Education", "Contact"].map((item, index) => (
           <motion.a
             key={index}
             onClick={() => {

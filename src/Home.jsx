@@ -6,6 +6,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Preloader from "./components/Preloader";
+import Skills from "./components/Skills";
 
 function Home() {
     const [loading, setLoading] = useState(true);
@@ -28,6 +29,9 @@ function Home() {
                     <Navbar />
                     <Element name="home">
                         <HeroSection />
+                    </Element>
+                    <Element name="skills">
+                        <Skills />
                     </Element>
                     <Element name="projects">
                         <Projects />
