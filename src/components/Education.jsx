@@ -20,13 +20,6 @@ const educationData = [
     year: "2021 - 2024",
     imgSrc: Gpt,
     tags: ["Computer Engineering", "Diploma", "91.18%"]
-  },
-  {
-    title: "Secondary School Certification",
-    description: "Completed my high school education with 97.40%",
-    year: "2020",
-    imgSrc: Skp,
-    tags: ["SSC", "Academic Excellence", "97.40%"]
   }
 ];
 
