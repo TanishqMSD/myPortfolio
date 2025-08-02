@@ -45,7 +45,46 @@ import CerQuasar from "../assets/certificates/quasar.jpg";
 //   );
 // };
 
+const TechStack = () => {
+  return (
+    <div className="relative w-full py-12 flex flex-col items-center space-y-6 overflow-hidden">
+      <h2 className="text-white text-3xl font-bold py-8">Tech Stack & Languages</h2>
+      <motion.div
+        className="flex items-center space-x-8 md:space-x-16"
+        animate={{ x: ["-80%", "50%"] }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+      >
+        {/* Duplicate the icons to create a seamless scrolling effect */}
+        {[...Array(2)].map((_, i) => (
+          <React.Fragment key={i}>
+            <TechIcon icon={<SiHtml5 />} color="text-orange-500" />
+            <TechIcon icon={<SiCss3 />} color="text-blue-500" />
+            <TechIcon icon={<SiJavascript />} color="text-yellow-400" />
+            <TechIcon icon={<FaReact />} color="text-blue-500" />
+            <TechIcon icon={<FaNodeJs />} color="text-green-500" />
+            <TechIcon icon={<SiExpress />} color="text-gray-400" />
+            <TechIcon icon={<SiMongodb />} color="text-green-600" />
+            <TechIcon icon={<SiPhp />} color="text-purple-500" />
+            <TechIcon icon={<SiMysql />} color="text-blue-400" />
+            <TechIcon icon={<SiTailwindcss />} color="text-teal-400" />
+            <TechIcon imgSrc={LangflowLogo} />
+            <TechIcon icon={<SiGooglegemini />} color="text-green-400" />
+            <TechIcon icon={<SiOpenai />} color="text-blue-400" />
+          </React.Fragment>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
+
+const TechIcon = ({ icon, imgSrc, color }) => {
+  return imgSrc ? (
+    <img src={imgSrc} alt="Tech Logo" className="w-12 md:w-14 h-12 md:h-14" />
+  ) : (
+    <div className={`text-5xl md:text-6xl ${color}`}>{icon}</div>
+  );
+};
 
 const ProjectCard = ({ title, description, liveLink, githubLink, imgSrc, tags, videoLink, techStack, completionDate, featured, role }) => {
   return (
@@ -216,7 +255,7 @@ const Projects = () => {
           })}
         </script>
       </Helmet>
-      
+      <TechStack />
       
       {/* Tab Navigation */}
       <div className="flex space-x-4 mb-8">
@@ -246,7 +285,7 @@ const Projects = () => {
             techStack={["MongoDB", "Express", "React", "Node.js", "Gemini API"]}
             completionDate="February 2023"
             featured={true}
-            role="Fullstack Developer"
+            role="Backend Developer"
           />
           <ProjectCard 
             title="Social Media Analyzer" 
@@ -336,7 +375,7 @@ const Projects = () => {
             techStack={["MERN Stack", "GraphQL", "JWT"]}
             completionDate="Ongoing"
             featured={false}
-            role="Fullstack Developer"
+            role="Lead Developer"
           />
           <ProjectCard 
             title="Labrooms" 
@@ -347,7 +386,7 @@ const Projects = () => {
             techStack={["Next.js", "Firebase", "WhatsApp API"]}
             completionDate="Ongoing"
             featured={false}
-            role="Fullstack Developer"
+            role="Full Stack Developer"
           />
         </div>
       )}

@@ -1,58 +1,80 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet';
-import { FaReact, FaNodeJs, FaGitAlt, FaDocker, FaFigma, FaAws, FaDatabase, FaCube, FaJava } from 'react-icons/fa';
-import { SiHtml5, SiCss3, SiJavascript, SiExpress, SiMongodb, SiTailwindcss, SiPhp, SiMysql, SiOpenai, SiGooglegemini, SiPython, SiTypescript, SiNextdotjs, SiFirebase, SiRedux, SiGraphql, SiThreedotjs, SiCplusplus, SiC } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaGitAlt, FaDocker, FaFigma, FaAws, FaDatabase, FaMicrosoft, FaJava } from 'react-icons/fa';
+import { SiHtml5, SiCss3, SiJavascript, SiExpress, SiMongodb, SiTailwindcss, SiPhp, SiMysql, SiOpenai, SiGooglegemini, SiPython, SiTypescript, SiNextdotjs, SiFirebase, SiRedux, SiGraphql, SiThreedotjs, SiCplusplus, SiC, SiReact, SiFastapi, SiKubernetes, SiGooglecloud, SiGooglecolab } from 'react-icons/si';
 import LangflowLogo from '../assets/langflow.png';
 
 const Skills = () => {
   const skillCategories = [
     {
-      name: 'Programming Languages',
-      skills: [
-        { name: 'C', icon: <SiC className="text-blue-500" />, level: 95 },
-        { name: 'C++', icon: <SiCplusplus className="text-red-500" />, level: 90 },
-        { name: 'Java', icon: <FaJava className="text-orange-500" />, level: 80 },
-        { name: 'VB.NET', icon: <FaDatabase className="text-purple-500" />, level: 70 },
-      ],
-    },
-    {
       name: 'Frontend Development',
       skills: [
-        { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" />, level: 100 },
-        { name: 'CSS3', icon: <SiCss3 className="text-blue-500" />, level: 100 },
-        { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" />, level: 100 },
-        { name: 'React.js', icon: <FaReact className="text-blue-500" />, level: 90 },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-teal-400" />, level: 95 },
-        { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" />, level: 40 },
-        { name: 'Next.js', icon: <SiNextdotjs className="text-white" />, level: 10 },
+        { name: 'HTML5', icon: <SiHtml5 className="text-orange-500" />, level: 95 },
+        { name: 'CSS3', icon: <SiCss3 className="text-blue-500" />, level: 90 },
+        { name: 'JavaScript', icon: <SiJavascript className="text-yellow-400" />, level: 92 },
+        { name: 'React.js', icon: <FaReact className="text-blue-500" />, level: 88 },
+        { name: 'React Native', icon: <SiReact className="text-blue-500" />, level: 75 },
+        { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" />, level: 75 },
+        { name: 'Next.js', icon: <SiNextdotjs className="text-white" />, level: 70 },
         { name: 'Redux', icon: <SiRedux className="text-purple-500" />, level: 80 },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-teal-400" />, level: 85 },
         { name: 'Three.js', icon: <SiThreedotjs className="text-white" />, level: 75 },
-        { name: 'shadcn/ui', icon: <FaCube className="text-gray-400" />, level: 100 },
+        { name: 'shadcn/ui', icon: <div className="w-6 h-6 bg-gray-400 rounded-sm flex items-center justify-center text-black text-xs font-bold">UI</div>, level: 82 },
+        { name: 'Figma', icon: <FaFigma className="text-purple-400" />, level: 75 },
       ],
     },
     {
       name: 'Backend Development',
       skills: [
-        { name: 'Node.js', icon: <FaNodeJs className="text-green-500" />, level: 90 },
-        { name: 'Express.js', icon: <SiExpress className="text-gray-400" />, level: 80 },
+        { name: 'Node.js', icon: <FaNodeJs className="text-green-500" />, level: 85 },
+        { name: 'Express.js', icon: <SiExpress className="text-gray-400" />, level: 82 },
+        { name: 'Python', icon: <SiPython className="text-blue-500" />, level: 80 },
+        { name: 'FastAPI', icon: <SiFastapi className="text-green-400" />, level: 75 },
         { name: 'MongoDB', icon: <SiMongodb className="text-green-600" />, level: 80 },
-        { name: 'PHP', icon: <SiPhp className="text-purple-500" />, level: 90 },
-        { name: 'MySQL', icon: <SiMysql className="text-blue-400" />, level: 100 },
-        { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" />, level: 40 },
+        { name: 'MySQL', icon: <SiMysql className="text-blue-400" />, level: 75 },
+        { name: 'PHP', icon: <SiPhp className="text-purple-500" />, level: 70 },
+        { name: 'Firebase', icon: <SiFirebase className="text-yellow-500" />, level: 78 },
+        { name: 'GraphQL', icon: <SiGraphql className="text-pink-500" />, level: 65 },
       ],
     },
     {
-      name: 'AI & Tools',
+      name: 'Cloud & DevOps',
       skills: [
-        { name: 'OpenAI', icon: <SiOpenai className="text-blue-400" />, level: 85 },
-        { name: 'Gemini', icon: <SiGooglegemini className="text-green-400" />, level: 80 },
-        { name: 'Langflow', icon: <img src={LangflowLogo} alt="Langflow" className="w-6 h-6" />, level: 75 },
-        { name: 'Python', icon: <SiPython className="text-blue-500" />, level: 50 },
-        { name: 'Git', icon: <FaGitAlt className="text-red-500" />, level: 85 },
-        { name: 'Docker', icon: <FaDocker className="text-blue-500" />, level: 10 },
-        { name: 'AWS', icon: <FaAws className="text-yellow-500" />, level: 20 },
-        { name: 'Figma', icon: <FaFigma className="text-purple-400" />, level: 40 },
+        { name: 'Microsoft Azure', icon: <FaMicrosoft className="text-blue-600" />, level: 80 },
+        { name: 'Google Cloud', icon: <SiGooglecloud className="text-blue-500" />, level: 20 },
+        
+        { name: 'AWS', icon: <FaAws className="text-yellow-500" />, level: 10 },
+        { name: 'Kubernetes', icon: <SiKubernetes className="text-blue-500" />, level: 30 },
+        { name: 'Docker', icon: <FaDocker className="text-blue-500" />, level: 25 },
+        { name: 'Git', icon: <FaGitAlt className="text-red-500" />, level: 90 },
+      ],
+    },
+    {
+      name: 'AI & ML Tools',
+      skills: [
+        { name: 'Google Colab', icon: <SiGooglecolab className="text-orange-500" />, level: 80 },
+        { name: 'Langflow', icon: <img src={LangflowLogo} alt="Langflow" className="w-6 h-6" />, level: 90 },
+        { name: 'PowerBI', icon: <div className="w-6 h-6 bg-yellow-500 rounded-sm flex items-center justify-center text-white text-xs font-bold">BI</div>, level: 1 },
+        { name: 'TensorFlow', icon: <div className="w-6 h-6 bg-orange-600 rounded-sm flex items-center justify-center text-white text-xs font-bold">TF</div>, level: 0 },
+      ],
+    },
+    {
+      name: 'Programming Languages',
+      skills: [
+        { name: 'C', icon: <SiC className="text-blue-500" />, level: 100 },
+        { name: 'C++', icon: <SiCplusplus className="text-red-500" />, level: 90 },
+        { name: 'Java', icon: <FaJava className="text-orange-500" />, level: 90 },
+        { name: 'VB.NET', icon: <FaDatabase className="text-purple-500" />, level: 80 },
+      ],
+    },
+    {
+      name: 'Languages Spoken',
+      skills: [
+        { name: 'English', icon: <span className="text-2xl">🇺🇸</span>, level: 80 },
+        { name: 'Marathi', icon: <span className="text-2xl">🇮🇳</span>, level: 100 },
+        { name: 'Hindi', icon: <span className="text-2xl">🇮🇳</span>, level: 70 },
+        { name: 'French', icon: <span className="text-2xl">🇫🇷</span>, level: 30 },
       ],
     },
   ];
